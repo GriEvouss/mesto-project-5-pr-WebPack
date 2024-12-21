@@ -1,12 +1,3 @@
-// @todo: Темплейт карточки
-
-// @todo: DOM узлы
-
-// @todo: Функция создания карточки
-
-// @todo: Функция удаления карточки
-
-// @todo: Вывести карточки на страницу
 import '../pages/index.css';
 import {initialCards} from "./cards";
 
@@ -15,7 +6,7 @@ for (let i = 0; i < popups.length; i++){
     popups[i].classList.add('popup_is-animated');
 }
 
-/////////////////////////////////////////работа с попапами
+//--------------------работа с попапами-----------------------
 const profilePopup = document.querySelector('.popup_type_edit');
 const profilePopupClose = profilePopup.querySelector('.popup__close');
 profilePopupClose.addEventListener('click', function(){
@@ -65,7 +56,7 @@ cardPopup.querySelector('.popup__button').addEventListener('click', function(evt
 });
 
 
-//////////////////////////////////работа с карточками (Добавление произвольной)
+//-----------------------------работа с карточками (Добавление произвольной)-----------------------
 const cardTemplate = document.querySelector("#template").content;
 
 function createCard(link, name){
@@ -134,7 +125,7 @@ const addButton = document.querySelector('.profile__add-button');
 for (let i = 0; i< cardsArray.length; i++){
     placesList.append(cardsArray[i]);
 }
-/////////////////////////////Валидация формы добавления карточки
+//-------------------------Валидация формы добавления карточки-----------------------
 const newCardPopupTitleInput = document.querySelector(".popup__input_type_card-name");
 const newCardPopupUrlInput = document.querySelector(".popup__input_type_url");
 const cardAddButton = document.querySelector(".popup_type_new-card").querySelector(".popup__button");
@@ -192,7 +183,7 @@ newCardPopupUrlInput.addEventListener("input", function(evt){ //Валидаци
         cardUrlInputInvalid.textContent = "Вы пропустили это поле";
     }
 });
-/////////////////////////////Валидация формы изменения профиля
+//-------------------------Валидация формы изменения профиля-----------------------------------
 const profilePopupTitleInput = document.querySelector(".popup__input_type_name");
 const profilePopupDescriptionInput = document.querySelector(".popup__input_type_description");
 const profileSaveButton = document.querySelector(".popup_type_edit").querySelector(".popup__button");
@@ -249,7 +240,7 @@ profilePopupDescriptionInput.addEventListener("input", function(evt){
     }
 
 });
-////////////////////////////////////////Закрытие на ESC
+//------------------------Закрытие на ESC---------------------------
 const popupsList = document.querySelectorAll(".popup");
 
 for (let i = 0; i < popupsList.length; i++){
